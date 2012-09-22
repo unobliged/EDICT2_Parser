@@ -1,0 +1,18 @@
+
+postgres: &postgres
+  adapter: postgresql
+  host: localhost
+  username: vagrant
+  password: blocio
+
+development:
+  <<: *postgres
+  database: edict2_development
+
+test:
+  <<: *postgres
+  database: edict2_test
+
+production:
+  <<: *postgres
+  database: edict2_production
