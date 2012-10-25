@@ -1,0 +1,14 @@
+
+<h1>Search Results</h1>
+<div class="wider container">
+<ul>
+  <% @words.each do |word|  %>
+		<li>
+			<p>Kanji/Kana: <%= word.keys %></p>
+			<p> Definition(s): <%= word.def_array %></p>
+		</li>
+	<% end %>
+</ul>
+</div>
+
+

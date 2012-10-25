@@ -1,0 +1,26 @@
+<h1>All words</h1>
+<div class="wider container">
+<%= form_tag words_path, :method => 'get' do %>
+	Go to page:
+	<%= text_field_tag(:page) %>
+	<%= submit_tag("Submit") %>
+<% end %>
+<%= form_tag find_words_path, :method => 'get' do %>
+	Find by Kanji/Kana:
+	<%= text_field_tag(:keys) %>
+	<%= submit_tag("Submit") %>
+<% end %>
+<%= form_tag find_in_def_words_path, :method => 'get' do %>
+	Find by definition text:
+	<%= text_field_tag(:text) %>
+	<%= submit_tag("Submit") %>
+<% end %>
+</div>
+<%= will_paginate %>
+<div class="wider container">
+<ul>
+  <%= render @words %>
+</ul>
+</div>
+
+<%= will_paginate %>

@@ -1,0 +1,33 @@
+<table>
+	<tr>
+		<th>Kanji</th>
+		<th>Kana</th>
+		<th>Definitions</th>
+		<th>EDICT2 ID</th>
+	</tr>
+
+  <% if @word.definitions.length > 1 %>
+		<tr>
+			<td><%= @word.kanji %></td>
+			<td><%= @word.kana %></td>
+			<td><%= @word.definitions[0] %></td>
+			<td><%= @word.edict_id %></td>
+		</tr>
+		<% (1..(@word.definitions.length-1)).each do |x| %>
+			<tr>
+				<td></td>
+				<td></td>
+				<td><%= @word.definitions[x] %></td>
+				<td></td>
+			</tr>			
+		<% end %>
+	<% else %>
+		<tr>
+			<td><%= @word.kanji %></td>
+			<td><%= @word.kana %></td>
+			<td><%= @word.definitions %></td>
+			<td><%= @word.edict_id %></td>
+		</tr>
+	<% end %>
+
+</table>
