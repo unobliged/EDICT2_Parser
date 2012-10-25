@@ -6,18 +6,18 @@
 		<th>EDICT2 ID</th>
 	</tr>
 
-  <% if @word.definitions.length > 1 %>
+  <% if @word.def_array.length > 1 %>
 		<tr>
 			<td><%= @word.kanji %></td>
 			<td><%= @word.kana %></td>
 			<td><%= @word.definitions[0] %></td>
 			<td><%= @word.edict_id %></td>
 		</tr>
-		<% (1..(@word.definitions.length-1)).each do |x| %>
+		<% (1..(@word.def_array.length-1)).each do |x| %>
 			<tr>
 				<td></td>
 				<td></td>
-				<td><%= @word.definitions[x] %></td>
+				<td><%= @word.def_array[x] %></td>
 				<td></td>
 			</tr>			
 		<% end %>
@@ -25,7 +25,7 @@
 		<tr>
 			<td><%= @word.kanji %></td>
 			<td><%= @word.kana %></td>
-			<td><%= @word.definitions %></td>
+			<td><%= @word.def_array %></td>
 			<td><%= @word.edict_id %></td>
 		</tr>
 	<% end %>

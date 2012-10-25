@@ -2,8 +2,8 @@
 postgres: &postgres
   adapter: postgresql
   host: localhost
-  username: azurely
-  password: blocio
+  username: 
+  password: 
 
 development:
   <<: *postgres
