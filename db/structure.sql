@@ -23,20 +23,6 @@ COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
 
 
 --
--- Name: hstore; Type: EXTENSION; Schema: -; Owner: -
---
-
-CREATE EXTENSION IF NOT EXISTS hstore WITH SCHEMA public;
-
-
---
--- Name: EXTENSION hstore; Type: COMMENT; Schema: -; Owner: -
---
-
-COMMENT ON EXTENSION hstore IS 'data type for storing sets of (key, value) pairs';
-
-
---
 -- Name: pg_trgm; Type: EXTENSION; Schema: -; Owner: -
 --
 
@@ -74,6 +60,7 @@ CREATE TABLE words (
     keys text,
     kanji text,
     kana text,
+    definitions text,
     edict_id text,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL,
@@ -149,33 +136,15 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 -- PostgreSQL database dump complete
 --
 
-INSERT INTO schema_migrations (version) VALUES ('20120925214518');
-
-INSERT INTO schema_migrations (version) VALUES ('20120926222830');
-
 INSERT INTO schema_migrations (version) VALUES ('20121003232755');
 
-INSERT INTO schema_migrations (version) VALUES ('20121011013343');
-
 INSERT INTO schema_migrations (version) VALUES ('20121023210918');
-
-INSERT INTO schema_migrations (version) VALUES ('20121024030822');
-
-INSERT INTO schema_migrations (version) VALUES ('20121024052043');
 
 INSERT INTO schema_migrations (version) VALUES ('20121024053301');
 
 INSERT INTO schema_migrations (version) VALUES ('20121024212339');
 
-INSERT INTO schema_migrations (version) VALUES ('20121024214250');
-
-INSERT INTO schema_migrations (version) VALUES ('20121024225315');
-
-INSERT INTO schema_migrations (version) VALUES ('20121024225839');
-
 INSERT INTO schema_migrations (version) VALUES ('20121024233839');
-
-INSERT INTO schema_migrations (version) VALUES ('20121024233946');
 
 INSERT INTO schema_migrations (version) VALUES ('20121025042137');
 

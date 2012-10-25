@@ -2,7 +2,7 @@
 postgres: &postgres
   adapter: postgresql
   host: localhost
-  username: vagrant
+  username: azurely
   password: blocio
 
 development:
