@@ -1,9 +1,8 @@
-
 postgres: &postgres
   adapter: postgresql
   host: localhost
-  username: vagrant
-  password: blocio
+  username: 
+  password: 
 
 development:
   <<: *postgres
