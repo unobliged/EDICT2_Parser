@@ -15,7 +15,10 @@
 	<%= text_field_tag(:text) %>
 	<%= submit_tag("Submit") %>
 <% end %>
-</div>
+<form name="SwitchButton" action=""> 
+  <input id="test" value="IME On/Off" onclick="ImeChangeMode()"
+  name="button" type="button"> 
+</form> 
 <%= will_paginate %>
 <div class="wider container">
 <ul>
