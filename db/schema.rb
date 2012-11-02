@@ -11,20 +11,22 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121023210918) do
+ActiveRecord::Schema.define(:version => 20121025042325) do
 
   create_table "words", :force => true do |t|
     t.text         "keys"
     t.text         "kanji"
     t.text         "kana"
-    t.text         "definitions"
     t.text         "edict_id"
-    t.datetime     "created_at",  :null => false
-    t.datetime     "updated_at",  :null => false
-    t.string_array "keys_array"
+    t.datetime     "created_at", :null => false
+    t.datetime     "updated_at", :null => false
     t.text         "keys_text"
+    t.string_array "def_array"
+    t.text         "def_text"
   end
 
-  add_index "words", ["keys_array"], :name => "index_on_words_gin_keys_array"
+  add_index "words", ["def_array"], :name => "gin_index_words_def_array"
+  add_index "words", ["def_text"], :name => "trgm_gin_index_words_def_text"
+  add_index "words", ["keys_text"], :name => "trgm_gin_index_words_keys_text"
 
 end
