@@ -4,7 +4,7 @@ task :load_edict => :environment do
 	Word.delete_all
 	
 	edict = 'edict2u'
-	lines = IO.readlines(edict)[0..9999]
+	lines = IO.readlines(edict)
 	lines.each do |line|
 	  edict_word = Word.new
 	# this tests for the dictionary version line, which is not a real entry
