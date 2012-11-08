@@ -3,7 +3,7 @@
 <div class="wider container">
 <ul>
   <% @words.each do |word|  %>
-		<li><%= word.keys %></li>
+		<li><%= link_to word.keys, word %></li>
 	<% end %>
 </ul>
 </div>

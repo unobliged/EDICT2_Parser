@@ -10,7 +10,7 @@
 		<tr>
 			<td><%= @word.kanji %></td>
 			<td><%= @word.kana %></td>
-			<td><%= @word.definitions[0] %></td>
+			<td><%= @word.def_array[0] %>
 			<td><%= @word.edict_id %></td>
 		</tr>
 		<% (1..(@word.def_array.length-1)).each do |x| %>
